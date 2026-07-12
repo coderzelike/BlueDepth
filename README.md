@@ -1,2 +1,5 @@
-# BlueDepth
-BlueDepth - Dive. Explore. Remember. A modern diving platform for logging dives, managing gear, tracking marine life, and preserving underwater memories.
+# 🌊 BlueDepth
+
+> Dive. Explore. Remember.
+
+**BlueDepth** is more than a dive logbook. It is a modern diving platform designed to help divers log dives, manage equipment, track marine life, and preserve unforgettable underwater memories.
