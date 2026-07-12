@@ -1,7 +1,24 @@
+import os
+
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
+from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
-DATABASE_URL = "postgresql+psycopg://postgres:Jelszo99@localhost:5432/bluedepth"
+load_dotenv()
 
-engine = create_engine(DATABASE_URL)
+DATABASE_URL = (
+    f"postgresql+psycopg://"
+    f"{os.getenv('DB_USER')}:"
+    f"{os.getenv('DB_PASSWORD')}@"
+    f"{os.getenv('DB_HOST')}:"
+    f"{os.getenv('DB_PORT')}/"
+    f"{os.getenv('DB_NAME')}"
+)
 
-print("✅ Connected to BlueDepth database!")
+engine = create_engine(DATABASE_URL, echo=True)
+
+SessionLocal = sessionmaker(bind=engine)
+
+
+class Base(DeclarativeBase):
+    pass
